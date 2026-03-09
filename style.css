@@ -1,0 +1,13 @@
+body{
+font-family: Arial;
+text-align:center;
+}
+
+h2{
+color:darkblue;
+}
+
+#map{
+height:600px;
+width:100%;
+}
