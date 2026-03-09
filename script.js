@@ -1,40 +1,65 @@
 // สร้างแผนที่
-var map = L.map('map').setView([13.7563,100.5018],12);
+var map = L.map('map').setView([13.736717, 100.523186], 12);
 
-// basemap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
- attribution:'&copy; OpenStreetMap'
+// โหลดแผนที่
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// icon
-var myIcon = L.icon({
- iconUrl:'icon.png',
- iconSize:[35,35],
- iconAnchor:[17,35],
- popupAnchor:[0,-30]
+
+// ไอคอนหมุดสี
+var redIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25,41],
+    iconAnchor: [12,41]
+});
+
+var blueIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25,41],
+    iconAnchor: [12,41]
+});
+
+var greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25,41],
+    iconAnchor: [12,41]
+});
+
+var orangeIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25,41],
+    iconAnchor: [12,41]
+});
+
+var violetIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25,41],
+    iconAnchor: [12,41]
 });
 
 
 // 1 Grand Palace
-var marker1 = L.marker([13.7515,100.4926],{icon:myIcon}).addTo(map);
-marker1.bindPopup("<b>Grand Palace</b><br>Phra Nakhon, Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Grand_Palace_Bangkok.jpg/500px-Grand_Palace_Bangkok.jpg' width='150'>");
-
+L.marker([13.7500,100.4913],{icon:redIcon}).addTo(map)
+.bindPopup("<b>Grand Palace</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/1/10/Grand_Palace_Bangkok.jpg' width='150'>");
 
 // 2 Wat Phra Kaew
-var marker2 = L.marker([13.7528,100.4940],{icon:myIcon}).addTo(map);
-marker2.bindPopup("<b>Wat Phra Kaew</b><br>Phra Nakhon, Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/500px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg' width='150'>");
-
+L.marker([13.7516,100.4925],{icon:blueIcon}).addTo(map)
+.bindPopup("<b>Wat Phra Kaew</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg' width='150'>");
 
 // 3 Lumphini Park
-var marker3 = L.marker([13.7308,100.5418],{icon:myIcon}).addTo(map);
-marker3.bindPopup("<b>Lumphini Park</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lumphini_Park_Bangkok.jpg/500px-Lumphini_Park_Bangkok.jpg' width='150'>");
+L.marker([13.7304,100.5418],{icon:greenIcon}).addTo(map)
+.bindPopup("<b>Lumphini Park</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Lumphini_Park_Bangkok.jpg' width='150'>");
 
+// 4 Wat Arun
+L.marker([13.7437,100.4889],{icon:orangeIcon}).addTo(map)
+.bindPopup("<b>Wat Arun</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/26/Wat_Arun_Ratchawararam.jpg' width='150'>");
 
-// 4 Siam Paragon
-var marker4 = L.marker([13.7465,100.5347],{icon:myIcon}).addTo(map);
-marker4.bindPopup("<b>Siam Paragon</b><br>Pathum Wan, Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Siam_Paragon.jpg/500px-Siam_Paragon.jpg' width='150'>");
-
-
-// 5 Wat Arun
-var marker5 = L.marker([13.7437,100.4889],{icon:myIcon}).addTo(map);
-marker5.bindPopup("<b>Wat Arun</b><br>Bangkok Yai, Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Wat_Arun_Ratchawararam.jpg/500px-Wat_Arun_Ratchawararam.jpg' width='150'>");
+// 5 Chatuchak Market
+L.marker([13.7996,100.5531],{icon:violetIcon}).addTo(map)
+.bindPopup("<b>Chatuchak Market</b><br>Bangkok<br><img src='https://upload.wikimedia.org/wikipedia/commons/6/6d/Chatuchak_Market.jpg' width='150'>");
